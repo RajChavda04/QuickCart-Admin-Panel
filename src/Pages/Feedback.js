@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
 import Swal from "sweetalert2"
+import API_BASE_URL from '../config/apiConfig'
 
  function Feedback() {
 
@@ -10,7 +11,7 @@ import Swal from "sweetalert2"
 
 
     useEffect(() => {
-        Axios.get('http://localhost:1337/api/feedbacklist')
+        Axios.get(`${API_BASE_URL}/feedbacklist`)
             .then((response) => {
                 setList(response.data);
             });
@@ -29,7 +30,7 @@ import Swal from "sweetalert2"
 
         }).then((result) => {
             if (result.isConfirmed) {
-                Axios.delete(`http://localhost:1337/api/feeddelete/${feed_id}`)
+                Axios.delete(`${API_BASE_URL}/feeddelete/${feed_id}`)
                     .then((response) => {
                         setList(list.filter(iteam => iteam.feed_id !== Number(feed_id)));
                         Swal.fire(

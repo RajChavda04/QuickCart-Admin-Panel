@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import API_BASE_URL from '../config/apiConfig'
 
 
 export default function Customerlist() {
@@ -13,7 +14,7 @@ export default function Customerlist() {
 
 
     const fetchusers =() => {
-        Axios.get('http://localhost:1337/api/customerlist')
+        Axios.get(`${API_BASE_URL}/customerlist`)
             .then((response) => {
                 setList(response.data);
             })
@@ -23,7 +24,7 @@ export default function Customerlist() {
     };
 
     // const fetchOrders = () => {
-    //     Axios.get("http://localhost:1337/api/getorder")
+    //     Axios.get(`${API_BASE_URL}/getorder`)
     //       .then((response) => {
     //         setList(response.data);
     //       })
@@ -33,7 +34,7 @@ export default function Customerlist() {
     //   };
 
     const updateOrderStatus = (customer_id, newStatus) => {
-        Axios.put(`http://localhost:1337/api/updatecustomerstatus`, {
+        Axios.put(`${API_BASE_URL}/updatecustomerstatus`, {
           customer_id: customer_id,
           newStatus: newStatus,
         })

@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
+import API_BASE_URL from '../config/apiConfig'
 
  function Order() {
     const [list, setList] = useState([]);
@@ -11,7 +12,7 @@ import {Link} from 'react-router-dom'
     }, []);
   
     const fetchOrders = () => {
-      Axios.get("http://localhost:1337/api/getorder")
+      Axios.get(`${API_BASE_URL}/getorder`)
         .then((response) => {
           setList(response.data);
         })
@@ -20,7 +21,7 @@ import {Link} from 'react-router-dom'
         });
     };
       const updateOrderStatus = (order_no, newStatus) => {
-        Axios.put(`http://localhost:1337/api/updateorderstatus`, {
+        Axios.put(`${API_BASE_URL}/updateorderstatus`, {
           order_no,
           newStatus,
         })

@@ -2,6 +2,7 @@ import React from 'react';
 import Swal from "sweetalert2";
 import Axios from "axios"
 import { Link } from 'react-router-dom'
+import API_BASE_URL from '../config/apiConfig'
 
 export default function Login() {
 
@@ -21,7 +22,7 @@ export default function Login() {
          });
          return;
       }
-      Axios.post("http://localhost:1337/api/loginprocess", {
+      Axios.post(`${API_BASE_URL}/loginprocess`, {
          admin_email: admin_email,
          admin_password: admin_password
 

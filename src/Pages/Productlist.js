@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axois from 'axios'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import API_BASE_URL from '../config/apiConfig'
 
 
 
@@ -10,7 +11,7 @@ export default function Productlist() {
     const [list, setList] = useState([]);
    
   useEffect(() => {
-    Axois.get('http://localhost:1337/api/productlist')
+    Axois.get(`${API_BASE_URL}/productlist`)
       .then((response) => {
         setList(response.data);
         
@@ -47,7 +48,7 @@ export default function Productlist() {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                Axois.delete(`http://localhost:1337/api/Product_Delete/${product_id}`)
+                Axois.delete(`${API_BASE_URL}/Product_Delete/${product_id}`)
                     .then((response) => {
                         setList(list.filter(iteam => iteam.product_id !== product_id));
                         Swal.fire(

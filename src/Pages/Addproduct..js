@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import Axios from 'axios'
+import API_BASE_URL from '../config/apiConfig'
+
+console.log('API_BASE_URL:', API_BASE_URL)
 
 function Addproduct() {
 
     const [list, setList] = useState([]);
     useEffect(() => {
-        Axios.get('http://localhost:1337/api/getcategory')
+        Axios.get(`${API_BASE_URL}/getcategory`)
             .then((response) => {
                 //console.log("API Response:", response.data); // Debugging step
 
@@ -24,7 +27,8 @@ function Addproduct() {
 
 
 
-    function aproduct() {
+    function aproduct(e) {
+        e.preventDefault();
         var product_name = document.getElementById("product_name").value;
         var product_description = document.getElementById("product_description").value;
         var product_quantity = document.getElementById("product_quantity").value;
@@ -51,7 +55,7 @@ function Addproduct() {
         formData.append('category_id', category_id);
         formData.append('product_image', product_image);
 
-        Axios.post('http://localhost:1337/api/insertproduct', formData, {
+        Axios.post(`${API_BASE_URL}/insertproduct`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

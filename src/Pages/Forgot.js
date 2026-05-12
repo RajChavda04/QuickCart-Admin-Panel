@@ -1,12 +1,13 @@
 import React,{useState}  from 'react'
 import Swal from "sweetalert2";
 import Axios from "axios"
+import API_BASE_URL from '../config/apiConfig'
 
 function Forgot() {
     const [adminEmail, setAdminEmail] = useState('');
 
     const onForgot = () => {
-        Axios.post("http://localhost:1337/api/adminsendmail", { email1: adminEmail })
+        Axios.post(`${API_BASE_URL}/adminsendmail`, { email1: adminEmail })
             .then((response) => {
                 if (response.data.message === "1") {
                     Swal.fire('Success', 'Password sent successfully', 'success');

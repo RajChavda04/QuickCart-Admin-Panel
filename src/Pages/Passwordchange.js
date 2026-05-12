@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import Axios from "axios";
+import API_BASE_URL from '../config/apiConfig';
 
 
 const Passwordchange = () => {
@@ -26,7 +27,7 @@ const Passwordchange = () => {
          });
          return;
       }
-      Axios.post("http://localhost:1337/api/passchange", {
+      Axios.post(`${API_BASE_URL}/passchange`, {
          admin_email: parsedata.admin_email,
          current_password: current_password,
          new_password: new_password,

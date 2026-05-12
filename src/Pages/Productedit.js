@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import API_BASE_URL from '../config/apiConfig';
 
 export default function Productedit() {
     
@@ -9,7 +10,7 @@ export default function Productedit() {
 
 
     useEffect(() => {
-        Axios.get('http://localhost:1337/api/categorylist')
+        Axios.get(`${API_BASE_URL}/categorylist`)
             .then((response) => {
                 setcatList(response.data);
                 //alert(response.data);
@@ -42,7 +43,7 @@ export default function Productedit() {
     useEffect(() => {
         if (product_id) {
 
-            Axios.post('http://localhost:1337/api/editproductdata', { product_id: product_id })
+            Axios.post(`${API_BASE_URL}/editproductdata`, { product_id: product_id })
                 .then((response) => {
                     setprodata(response.data);
                     //alert(response.data);
@@ -81,7 +82,7 @@ export default function Productedit() {
         }
       
     
-      Axios.post('http://localhost:1337/api/productupdate', formData,{
+      Axios.post(`${API_BASE_URL}/productupdate`, formData,{
         headers: { 'Content-Type': 'multipart/form-data' },
       }).then(() => {
         Swal.fire({

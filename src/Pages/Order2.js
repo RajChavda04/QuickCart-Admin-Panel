@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useLocation } from "react-router-dom";
+import API_BASE_URL from '../config/apiConfig'
 
 
 function Order2() {
@@ -18,7 +19,7 @@ function Order2() {
             return;
         }
 
-        Axios.get(`http://localhost:1337/api/order-details/${order_no}`)
+        Axios.get(`${API_BASE_URL}/order-details/${order_no}`)
             .then((response) => {
                 setOrderDetails(response.data);
                 // alert(order_no)

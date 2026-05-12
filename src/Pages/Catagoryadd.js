@@ -1,6 +1,7 @@
 import React from 'react'
 import Swal from "sweetalert2"
 import Axios from "axios"
+import API_BASE_URL from '../config/apiConfig'
 
 
 function Catagoryadd() {
@@ -25,7 +26,7 @@ function Catagoryadd() {
         formData.append('category_image', category_image);
 
 
-        Axios.post('http://localhost:1337/api/insertcategory', formData, {
+        Axios.post(`${API_BASE_URL}/insertcategory`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

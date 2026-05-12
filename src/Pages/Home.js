@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
+import API_BASE_URL from '../config/apiConfig';
 
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
     useEffect(() => {
 
         const fetchSummary = () => {
-            Axios.get('http://localhost:1337/api/admin/summary')
+            Axios.get(`${API_BASE_URL}/admin/summary`)
                 .then((res) => {
                     setSummary(res.data);
                 })

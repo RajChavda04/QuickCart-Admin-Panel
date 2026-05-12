@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import API_BASE_URL from '../config/apiConfig';
 
 export default function Categoryedit() {
     
@@ -26,7 +27,7 @@ export default function Categoryedit() {
     useEffect(() => {
         if (category_id) {
 
-            Axios.post('http://localhost:1337/api/editcategorydata1', { category_id: category_id })
+            Axios.post(`${API_BASE_URL}/editcategorydata1`, { category_id: category_id })
                 .then((response) => {
                     setprodata(response.data);
                     //alert(response.data);
@@ -64,7 +65,7 @@ export default function Categoryedit() {
         }
       
     
-      Axios.post('http://localhost:1337/api/categoryupdate1', formData,{
+      Axios.post(`${API_BASE_URL}/categoryupdate1`, formData,{
         headers: { 'Content-Type': 'multipart/form-data' },
       }).then(() => {
         Swal.fire({

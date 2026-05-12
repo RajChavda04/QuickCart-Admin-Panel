@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Axois from 'axios'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import API_BASE_URL from '../config/apiConfig'
 
 export default function Catagorylist() {
 
     const [list, setList] = useState([]);
     useEffect(() => {
-        Axois.get('http://localhost:1337/api/categorylist')
+        Axois.get(`${API_BASE_URL}/categorylist`)
             .then((response) => {
                 setList(response.data);
             });
@@ -25,7 +26,7 @@ export default function Catagorylist() {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                Axois.delete(`http://localhost:1337/api/Category_Delete/${category_id}`)
+                Axois.delete(`${API_BASE_URL}/Category_Delete/${category_id}`)
                     .then((response) => {
                         setList(list.filter(iteam => iteam.category_id !== category_id));
                         Swal.fire(
