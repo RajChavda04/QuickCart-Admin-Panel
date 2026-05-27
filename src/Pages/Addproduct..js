@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import Axios from 'axios'
 import API_BASE_URL from '../config/apiConfig'
 
-console.log('API_BASE_URL:', API_BASE_URL)
+
 
 function Addproduct() {
 
