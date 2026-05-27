@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { useLocation } from "react-router-dom";
 import API_BASE_URL from '../config/apiConfig'
-import MEDIA_BASE_URL from '../config/apiConfig';
+import {MEDIA_BASE_URL} from '../config/apiConfig';
 
 function Order2() {
     const location = useLocation();
