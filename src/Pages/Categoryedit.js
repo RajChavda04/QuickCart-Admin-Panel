@@ -133,7 +133,7 @@ export default function Categoryedit() {
                                                         id="product_image" onChange={handleImageChange} accept="image/*" />
                                                 
                                                         <img
-                                                            src={`http://localhost:1337/${(categorydata.category_image)}`}
+                                                            src={`${MEDIA_BASE_URL}/${(categorydata.category_image)}`}
                                                             alt={categorydata.category_image}
                                                             className="img-fluid rounded avatar-50 mr-3" />
                                                         

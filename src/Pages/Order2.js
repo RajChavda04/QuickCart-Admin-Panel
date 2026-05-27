@@ -197,7 +197,7 @@ function Order2() {
                                             {orderDetails.items.map((item, index) => (
                                                 <tr key={index} >
                                                     <td><img
-                                                        src={`http://localhost:1337/${(item.product_image)}`}
+                                                        src={`${MEDIA_BASE_URL}/${(item.product_image)}`}
                                                         alt={item.product_image}
                                                         className="img-fluid rounded avatar-50 mr-3" /></td>
                                                     <td>{item.product_name}</td>

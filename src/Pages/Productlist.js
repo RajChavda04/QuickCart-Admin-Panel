@@ -108,7 +108,7 @@ export default function Productlist() {
                                                     <td>{val.product_name} </td>
                                                     <td>
                                                         <img
-                                                            src={`http://localhost:1337/${(val.product_image)}`}
+                                                            src={`${MEDIA_BASE_URL}/${(val.product_image)}`}
                                                             alt={val.product_image}
                                                             className="img-fluid rounded avatar-50 mr-3" />
                                                     </td>

@@ -177,7 +177,7 @@ export default function Productedit() {
                                                         id="product_image" onChange={handleImageChange} accept="image/*" />
                                                 
                                                         <img
-                                                            src={`http://localhost:1337/${(productdata.product_image)}`}
+                                                            src={`${MEDIA_BASE_URL}/${(productdata.product_image)}`}
                                                             alt={productdata.product_image}
                                                             className="img-fluid rounded avatar-50 mr-3" />
                                                         

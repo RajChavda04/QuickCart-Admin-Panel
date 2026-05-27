@@ -82,7 +82,7 @@ export default function Catagorylist() {
                                                     <td>{val.category_id}</td>
                                                     <td>
                                                         <img
-                                                            src={`http://localhost:1337/${(val.category_image)}`}
+                                                            src={`${MEDIA_BASE_URL}/${(val.category_image)}`}
                                                             alt={val.category_image}
                                                             className="img-fluid rounded avatar-50 mr-3" />
                                                     </td>
