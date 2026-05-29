@@ -19,7 +19,7 @@ const Header = () => {
                     <div className="iq-navbar-logo d-flex align-items-center justify-content-between">
                         <i className="ri-menu-line wrapper-menu"></i>
                         <Link href="/" className="header-logo">
-                            <img src="assets/images/logo.png" className="img-fluid rounded-normal" alt="logo"/>
+                            <img src="https://res.cloudinary.com/dmuedtbcs/image/upload/v1780039966/logo100_orkayc.png" className="img-fluid rounded-normal" alt="logo"/>
                             <h5 className="logo-title ml-3">QuickCart</h5>
 
                         </Link>
@@ -42,7 +42,7 @@ const Header = () => {
                                 <li className="nav-item nav-icon dropdown caption-content">
                                     <Link href="/" className="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img src="assets/images/user/rajimage.jpg" className="img-fluid rounded" alt="user"/>
+                                        <img src="https://res.cloudinary.com/dmuedtbcs/image/upload/v1780044870/boy_kuwngy.png" className="img-fluid rounded" alt="user"/>
                                     </Link>
                                     <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <div className="card shadow-none m-0">
@@ -50,11 +50,11 @@ const Header = () => {
                                                 <div className="media-body profile-detail text-center">
                                                     <img src="assets/images/page-img/userauth.jpeg" alt="profile-bg"
                                                         className="rounded-top img-fluid mb-4"/>
-                                                    <img src="assets/images/user/rajimage.jpg" alt="profile-img"
+                                                    <img src="https://res.cloudinary.com/dmuedtbcs/image/upload/v1780044870/boy_kuwngy.png" alt="profile-img"
                                                         className="rounded profile-img img-fluid avatar-70"/>
                                                 </div>
                                                 <div className="p-3">
-                                                    <h5 className="mb-1">rajchavda463@gmail.com</h5>
+                                                    <h5 className="mb-1">admin123@gmail.com</h5>
                                                     <p className="mb-0">Since 1 feb, 2025</p>
                                                     <div className="d-flex align-items-center justify-content-center mt-3">
                                                         <button className="btn border mr-2"><Link to="/Admindetails">Profile</Link></button>

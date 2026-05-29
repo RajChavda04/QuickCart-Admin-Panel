@@ -16,23 +16,16 @@ export default function Customerlist() {
     const fetchusers =() => {
         Axios.get(`${API_BASE_URL}/customerlist`)
             .then((response) => {
-                setList(response.data);
+                const usersWithoutPassword = response.data.map(
+                    ({ customer_password, ...user }) => user
+                  );
+                  setList(usersWithoutPassword);
+                  console.log("hellow",usersWithoutPassword)
             })
             .catch((err) => {
                         console.error("Axios error:", err);
                       });
     };
-
-    // const fetchOrders = () => {
-    //     Axios.get(`${API_BASE_URL}/getorder`)
-    //       .then((response) => {
-    //         setList(response.data);
-    //       })
-    //       .catch((err) => {
-    //         console.error("Axios error:", err);
-    //       });
-    //   };
-
     const updateOrderStatus = (customer_id, newStatus) => {
         Axios.put(`${API_BASE_URL}/updatecustomerstatus`, {
           customer_id: customer_id,
@@ -46,8 +39,6 @@ export default function Customerlist() {
           });
       };
 
-    
-   
     return (
         <>
             <div className="wrapper">
@@ -72,7 +63,6 @@ export default function Customerlist() {
                                                 <th hidden >customer id</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Password</th>
                                                 <th>Phone number</th>
                                                 <th>Address</th>
             
@@ -88,7 +78,6 @@ export default function Customerlist() {
                                                      <td hidden>{val.customer_id}</td>
                                                     <td>{val.customer_name}</td>
                                                     <td>{val.customer_email}</td>
-                                                    <td>{val.customer_password}</td>
                                                     <td>{val.customer_phone}</td>
                                                     <td>{val.customer_address}</td>
                                                     <td hidden>{val.customer_status}</td>

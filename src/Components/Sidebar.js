@@ -9,7 +9,7 @@ const Sidebar = () => {
                 <div className="iq-sidebar  sidebar-default ">
                     <div className="iq-sidebar-logo d-flex align-items-center ">
                         <a href="/Home" className="header-logo">
-                            <img src="assets/images/logo100.png" className="img-fluid rounded-normal light-logo" alt="logo" />
+                            <img src="https://res.cloudinary.com/dmuedtbcs/image/upload/v1780039966/logo100_orkayc.png" className="img-fluid rounded-normal light-logo" alt="logo" />
                             <h5 className="logo-title light-logo ml-3">QuickCart</h5>
                         </a>
                         <div className="iq-menu-bt-sidebar ml-0">

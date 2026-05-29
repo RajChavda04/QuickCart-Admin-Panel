@@ -24,10 +24,10 @@ export default function Admindetails() {
                                     <div className="card-body">
                                         <div className="d-flex align-items-center mb-3">
                                             <div className="profile-img position-relative">
-                                                <img src="assets/images/user/rajimage.jpg" className="img-fluid rounded avatar-110" alt="profile-image"/>
+                                                <img src="https://res.cloudinary.com/dmuedtbcs/image/upload/v1780044870/boy_kuwngy.png" className="img-fluid rounded avatar-110" alt="profile-image"/>
                                             </div>
                                             <div className="ml-3">
-                                                <h4 className="mb-1">Raj Chavda</h4>
+                                                <h4 className="mb-1">Raajj</h4>
                                                 <p className="mb-2">Web Developer</p>
                                                 
                                             </div>
@@ -90,18 +90,7 @@ export default function Admindetails() {
                                             <li className="nav-item">
                                                 <a className="nav-link active show" data-toggle="pill" href="#profile1" role="tab" aria-selected="false">My Skills</a>
                                             </li>
-                                            {/* <li className="nav-item">
-                                                <a className="nav-link" data-toggle="pill" href="#profile2" role="tab" aria-selected="false">Personal Information</a>
-                                            </li>
-                                            <li className="nav-item">
-                                                <a className="nav-link" data-toggle="pill" href="#profile3" role="tab" aria-selected="false">Education</a>
-                                            </li>
-                                            <li className="nav-item">
-                                                <a className="nav-link" data-toggle="pill" href="#profile4" role="tab" aria-selected="false">Experience</a>
-                                            </li>
-                                            <li className="nav-item">
-                                                <a id="view-btn" className="nav-link" data-toggle="pill" href="#profile5" role="tab" aria-selected="true">About</a>
-                                            </li> */}
+                                            
                                         </ul>
                                         <div className="profile-content tab-content">
 
