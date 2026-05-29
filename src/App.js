@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom';
 import Sidebar from './Components/Sidebar';
 import Home from './Pages/Home'
 import Header from './Components/Header'
@@ -21,8 +21,7 @@ import Order from './Pages/Order';
 import Forgot from './Pages/Forgot';
 import Feedback from './Pages/Feedback';
 import Order2 from './Pages/Order2';
-
-
+import {ProtectedRoute,PublicRoute} from "./utils/ProtectedRoutes"
 
 
 
@@ -52,25 +51,23 @@ function MainContent(){
   
    
    <Routes>
-   <Route path="/" element={<Login></Login>}></Route>
-   <Route path="/Passwordchange" element={<Passwordchange></Passwordchange>}></Route>
-   <Route path="/Productlist" element={<Productlist></Productlist>}></Route>
-   <Route path="/Addproduct" element={<Addproduct></Addproduct>}></Route>
-   <Route path="/Catagorylist" element={<Catagorylist></Catagorylist>}></Route>
-   <Route path="/Catagoryadd" element={<Catagoryadd></Catagoryadd>}></Route>
-   <Route path="/Customerlist" element={<Customerlist></Customerlist>}></Route>
-   <Route path="/Customeradd" element={<Customeradd></Customeradd>}></Route>
-   <Route path="/Admindetails" element={<Admindetails></Admindetails>}></Route>
-   <Route path="/Categoryedit" element={<Categoryedit></Categoryedit>}></Route>
-   <Route path="/Productedit" element={<Productedit></Productedit>}></Route>
-   <Route path="/Order" element={<Order></Order>}></Route>
-   <Route path="/Forgot" element={<Forgot></Forgot>}></Route>
-   <Route path="/Feedback" element={<Feedback></Feedback>}></Route>
-   <Route path="/Order2" element={<Order2></Order2>}></Route>
-   
-   
-    <Route path="/Home" element={<Home></Home>}></Route>
-    
+   <Route path="/" element={<PublicRoute><Login/></PublicRoute>}/>
+  <Route path="/Home" element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
+   <Route path="/Passwordchange" element={<ProtectedRoute><Passwordchange/></ProtectedRoute>}></Route>
+   <Route path="/Productlist" element={<ProtectedRoute><Productlist/></ProtectedRoute>}></Route>
+   <Route path="/Addproduct" element={<ProtectedRoute><Addproduct/></ProtectedRoute>}></Route>
+   <Route path="/Catagorylist" element={<ProtectedRoute><Catagorylist/></ProtectedRoute>}></Route>
+   <Route path="/Catagoryadd" element={<ProtectedRoute><Catagoryadd/></ProtectedRoute>}></Route>
+   <Route path="/Customerlist" element={<ProtectedRoute><Customerlist/></ProtectedRoute>}></Route>
+   <Route path="/Customeradd" element={<ProtectedRoute><Customeradd/></ProtectedRoute>}></Route>
+   <Route path="/Admindetails" element={<ProtectedRoute><Admindetails/></ProtectedRoute>}></Route>
+   <Route path="/Categoryedit" element={<ProtectedRoute><Categoryedit/></ProtectedRoute>}></Route>
+   <Route path="/Productedit" element={<ProtectedRoute><Productedit/></ProtectedRoute>}></Route>
+   <Route path="/Order" element={<ProtectedRoute><Order/></ProtectedRoute>}></Route>
+   <Route path="/Forgot" element={<PublicRoute><Forgot/></PublicRoute>}></Route>
+   <Route path="/Feedback" element={<ProtectedRoute><Feedback/></ProtectedRoute>}></Route>
+   <Route path="/Order2" element={<ProtectedRoute><Order2/></ProtectedRoute>}></Route>
+   <Route path="*" element={  sessionStorage.getItem("mydata") ? <Navigate to="/Home" replace /> : <Navigate to="/" replace /> } />
    </Routes>
   {!isCompanyReg && ! isCompanyReg1 && ! isCompanyReg2 &&<Footer/>}
    </>

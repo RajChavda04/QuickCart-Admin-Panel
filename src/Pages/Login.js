@@ -1,13 +1,12 @@
 import React from 'react';
 import Swal from "sweetalert2";
 import Axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import API_BASE_URL from '../config/apiConfig'
 
 export default function Login() {
-
-
-
+   
+   const navigate = useNavigate();
 
    function adminlogin() {
       //alert();
@@ -33,7 +32,7 @@ export default function Login() {
                title: 'Opps...',
                text: response.data.message
             }).then(() => {
-               window.location = "/Login";
+               navigate("/");
             })
          }
          else {
@@ -46,7 +45,7 @@ export default function Login() {
                title: 'Login successful',
                text: `Welcome ${admin_email}`
             }).then(() => {
-               window.location = "/Home";
+               navigate("/Home");
             })
          }
       })
